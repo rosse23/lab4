@@ -7,6 +7,9 @@ var USERSCHEMA = new mongoose.Schema({
     registerdate: {type: Date},
     sex: {type: String},
     address: {type: String},
+    relativepathimage: {type: String},
+    pathimage:{type: String},
+    hash: {type: String}
 });
 const USERS = mongoose.model("users", USERSCHEMA);
 module.exports = USERS;

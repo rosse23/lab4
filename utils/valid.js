@@ -13,8 +13,7 @@ var valid = {
             return('uno o mas campos estan vacios');
             
         }else{
-            const useremail= await USER.findOne({email: email}) //no olvidar el await 
-            console.log(useremail)
+            const useremail= await USER.findOne({email: email}) 
             if (useremail)
             return ('el email ya esta en uso, ingrese otro diferente')
         }
@@ -22,7 +21,6 @@ var valid = {
     checkPassword: async function (password) {
         var us= new USER();
         us.password=password
-        console.log(await us.password.length)
         if(await us.password.length<6)
             return('El password demasiado corto')
         if(!/^[A-Z]\S+\S/.test(us.password))
